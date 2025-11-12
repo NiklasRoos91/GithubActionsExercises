@@ -1,0 +1,32 @@
+name: ⚡ Exercise 4 - Environment Specific Deploy
+
+on:
+  push:
+    branches:
+      - '**'
+
+
+jobs:
+  deploy-to-dev:
+    name: 🌱 Deploy to Development
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - name: 🏁 Start Dev Deployment
+        run: echo "Deploying to ${{ github.environment }}"
+
+      - name: 💻 Dummy Deploy Dev
+        run: echo "Dev deploy step executed for ${{ github.environment }}"
+
+  deploy-to-prod:
+    name: 🔥 Deploy to Production
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: 🏁 Start Prod Deployment
+        run: echo "Deploying to ${{ github.environment }}"
+
+      - name: 💻 Dummy Deploy Prod
+        run: echo "Prod deploy step executed for ${{ github.environment }}"
