@@ -1,8 +1,10 @@
 # Controllers handled by backend dev
-/Controllers/ @personA
+/Controllers/ @NiklasRoos91
 
 # Domain logic handled by architect
 /Domain/ @personB
 
 # Shared utils by reviewew by both
 /Common/ @personA @personB
+
+README.md @NiklasRoos91
